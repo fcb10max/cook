@@ -34,6 +34,7 @@ export const Card = styled.div`
       text-overflow: ellipsis;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      color: #000;
     }
   }
 
@@ -51,6 +52,10 @@ export const Card = styled.div`
 
       i {
         margin-right: 5px;
+      }
+
+      p {
+        color: #000;
       }
     }
   }

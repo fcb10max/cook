@@ -19,7 +19,7 @@
       { "name": "Прованские травы", "count": "1 щепот." },
       { "name": "Соль", "count": "1/4 ч. л." }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 2,
@@ -41,7 +41,7 @@
       { "name": "Перец черный молотый", "count": "по вкусу" },
       { "name": "Соль", "count": "по вкусу" }
     ],
-    "withMeat": true
+    "notVegan": true
   },
   {
     "id": 3,
@@ -63,7 +63,7 @@
       { "name": "Зубчик чеснока 2 шт", "count": "" },
       { "name": "Соль", "count": "1/4 ч. л." }
     ],
-    "withMeat": true
+    "notVegan": true
   },
   {
     "id": 4,
@@ -87,7 +87,7 @@
       { "name": "Зелень петрушки", "count": "1 пучок" },
       { "name": "Соль", "count": "1 щепот." }
     ],
-    "withMeat": true
+    "notVegan": true
   },
   {
     "id": 5,
@@ -114,7 +114,7 @@
       { "name": "Перец черный молотый", "count": "по вкусу" },
       { "name": "Соль", "count": "по вкусу" }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 6,
@@ -137,7 +137,7 @@
       { "name": "Зелень укропа", "count": "1 пучок" },
       { "name": "Ломтики лимона для украшения", "count": "" }
     ],
-    "withMeat": true
+    "notVegan": true
   },
   {
     "id": 7,
@@ -155,7 +155,7 @@
       { "name": "Соль", "count": "1 ч. л." },
       { "name": "Сушеный чеснок", "count": "1 ч. л." }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 8,
@@ -176,7 +176,7 @@
       { "name": "Помидоры черри", "count": "5-6 шт" },
       { "name": "Зелень петрушки", "count": "по вкусу" }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 9,
@@ -199,7 +199,7 @@
       { "name": "Сахарная пудра", "count": "по вкусу" },
       { "name": "Соль", "count": "1 щепот." }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 10,
@@ -219,7 +219,7 @@
       { "name": "Укроп", "count": "1 пучок" },
       { "name": "Сыр плавленый", "count": "2 ст. л." }
     ],
-    "withMeat": true
+    "notVegan": true
   },
   {
     "id": 11,
@@ -239,7 +239,7 @@
       { "name": "Соль", "count": "по вкусу" },
       { "name": "Перец", "count": "по вкусу" }
     ],
-    "withMeat": false
+    "notVegan": false
   },
   {
     "id": 12,
@@ -264,6 +264,6 @@
       { "name": "Сливочное масло", "count": "1 ст. л." },
       { "name": "Соль", "count": "1/4 ч. л." }
     ],
-    "withMeat": false
+    "notVegan": false
   }
 ]

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import NotFound from "./Pages/404";
@@ -26,25 +26,49 @@ export interface IReceipt {
       count: string;
     }
   ];
-  withMeat: boolean;
+  notVegan: boolean;
 }
+
+interface IWrapperProps {
+  children: React.ReactElement;
+}
+
+const Wrapper: React.FC<IWrapperProps> = ({ children }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+  return children;
+};
 
 const App = () => {
   const [data, setData] = useState<IReceipt[]>(receipts as IReceipt[]);
-  const homeReceiptsCount = 8
+  const homeReceiptsCount = 8;
 
   return (
     <BrowserRouter>
       <GlobalStyles />
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Home receipts={data.slice(0, homeReceiptsCount)} />}></Route>
-          <Route path="/receipts" element={<Receipts receipts={data} />}></Route>
-          <Route path="/receipt/:id" element={<Receipt receipts={data} />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/*" element={<NotFound />}></Route>
-        </Routes>
+        <Wrapper>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home receipts={data.slice(0, homeReceiptsCount)} />}
+            ></Route>
+            <Route
+              path="/receipts"
+              element={<Receipts receipts={data} />}
+            ></Route>
+            <Route
+              path="/receipt/:id"
+              element={<Receipt receipts={data} />}
+            ></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/*" element={<NotFound />}></Route>
+          </Routes>
+        </Wrapper>
       </main>
       <Footer />
     </BrowserRouter>
