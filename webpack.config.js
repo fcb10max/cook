@@ -10,6 +10,7 @@ module.exports = {
 	output: {
 		path: __dirname + "/dist/",
 		publicPath: "/",
+		filename: "bunde.[hash].js"
 	},
 	devServer: {
 		static: path.resolve(__dirname, "./dist"),
