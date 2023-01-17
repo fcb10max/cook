@@ -1,8 +1,8 @@
 const prod = process.env.NODE_ENV === "production";
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
 	mode: prod ? "production" : "development",
@@ -10,7 +10,8 @@ module.exports = {
 	output: {
 		path: __dirname + "/dist/",
 		publicPath: "/",
-		filename: "bunde.[hash].js"
+		filename: "bunde.[hash].js",
+		clean: true,
 	},
 	devServer: {
 		static: path.resolve(__dirname, "./dist"),
@@ -28,10 +29,6 @@ module.exports = {
 				use: "ts-loader",
 			},
 			{
-				test: /\.css$/,
-				use: [MiniCssExtractPlugin.loader, "css-loader"],
-			},
-			{
 				test: /\.(jpe?g|png|gif|svg)$/i, 
 				loader: 'file-loader',
 		}
@@ -41,7 +38,15 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "public/index.html",
-		}),
-		new MiniCssExtractPlugin(),
+			minify: {
+				html5: true,
+				collapseWhitespace: true,
+				useShortDoctype:true,
+			}
+		})
 	],
+	optimization: {
+		minimize: true,
+		minimizer: [new TerserPlugin()]
+	}
 };
