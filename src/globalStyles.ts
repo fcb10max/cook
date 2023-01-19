@@ -5,10 +5,15 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: Montserrat, sans-serif;
+    position: relative;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  .root {
+    position: relative;
   }
 
   a {

@@ -13,7 +13,7 @@ const Home: React.FC<IHomeProps> = ({ receipts }) => {
     <HomeC>
       <HomeWrapper>
         <Hero>
-          <Link to="/receipts">Explore receipts</Link>
+          <Link to="/receipts">Все рецепты</Link>
         </Hero>
         <LastReceipts>
           {receipts.map((receipt) => (

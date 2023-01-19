@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import NotFound from "./Pages/404";
@@ -49,7 +55,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Header />
+      <Header/>
       <main>
         <Wrapper>
           <Routes>
@@ -66,7 +72,8 @@ const App = () => {
               element={<Receipt receipts={data} />}
             ></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/*" element={<NotFound />}></Route>
+            <Route path="/not_found" element={<NotFound />}></Route>
+            <Route path="/*" element={<Navigate to={"/not_found"} />}></Route>
           </Routes>
         </Wrapper>
       </main>

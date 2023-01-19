@@ -21,20 +21,21 @@ interface IReceiptsComponentProps {
 }
 
 const Receipts: React.FC<IReceiptsComponentProps> = ({ receipts }) => {
-  const [mealFilter, setMealFilter] = useState("all");
-  const [meals, setMeals] = useState(receipts);
   const filterTypes = {
-    all: "all",
-    meat: "meat",
-    vegan: "vegan",
+    all: "Все",
+    meat: "С мясом",
+    vegan: "Вегетерианские",
   } as const;
 
   type Keys = keyof typeof filterTypes;
   type Values = typeof filterTypes[Keys];
 
+  const [mealFilter, setMealFilter] = useState<Values>(filterTypes.all);
+  const [meals, setMeals] = useState(receipts);
+
   const filterChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value: Values = e.target.value as Values;
-    setMealFilter(filterTypes[value]);
+    const value = e.target.value as Values;
+    setMealFilter(value);
   };
 
   useEffect(() => {
@@ -70,7 +71,7 @@ const Receipts: React.FC<IReceiptsComponentProps> = ({ receipts }) => {
               }
               alt="all_meals"
             />
-            All
+            {filterTypes.all}
           </ReceiptsFilterItem>
           <ReceiptsFilterItem active={mealFilter === filterTypes.meat}>
             <input
@@ -83,7 +84,7 @@ const Receipts: React.FC<IReceiptsComponentProps> = ({ receipts }) => {
               src={mealFilter === filterTypes.meat ? meatImg : meatImgGrayscale}
               alt="meat"
             />
-            Meat lover
+            {filterTypes.meat}
           </ReceiptsFilterItem>
           <ReceiptsFilterItem active={mealFilter === filterTypes.vegan}>
             <input
@@ -98,7 +99,7 @@ const Receipts: React.FC<IReceiptsComponentProps> = ({ receipts }) => {
               }
               alt="meat"
             />
-            Vegan
+            {filterTypes.vegan}
           </ReceiptsFilterItem>
         </ReceiptsFilter>
         <ReceiptsGrid>

@@ -8,7 +8,7 @@ const Footer = () => {
       <FooterWrapper>
         <Logo/>
       </FooterWrapper>
-      <small>&copy;2023 All rights reserved</small>
+      <small>&copy;2023. Все права защищены</small>
     </FooterC>
   )
 }

@@ -8,15 +8,15 @@ const Header = () => {
     <HeaderC>
       <HeaderWrapper>
         <HeaderLogo>
-          <Logo/>
+          <Logo />
         </HeaderLogo>
         <HeaderNavbar>
           <ul>
             <li>
-              <Link to="/receipts">Receipts</Link>
+              <Link to="/receipts">Рецепты</Link>
             </li>
             <li>
-              <Link to="/about">About us</Link>
+              <Link to="/about">Обо мне</Link>
             </li>
           </ul>
         </HeaderNavbar>

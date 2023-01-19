@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --port 3000 --mode development --config webpack.config.js",
+    "dev": "webpack-dev-server --port 3000 --mode development --config webpack.config.js --open",
     "start": "webpack serve --port 3000 --open",
     "build": "set NODE_ENV=production && webpack"
   },

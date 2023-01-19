@@ -45,6 +45,11 @@ export const Hero = styled.section`
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: 768px) {
+    min-height: unset;
+    background-size: 140% auto;
+  }
 `;
 
 export const LastReceipts = styled.section`

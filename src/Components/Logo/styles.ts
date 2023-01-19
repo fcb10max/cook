@@ -11,4 +11,11 @@ export const LogoC = styled.div<ILogoCProps>`
   a {
     color: teal;
   }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+  @media (max-width: 500px) {
+    font-size: 30px;
+  }
 `;

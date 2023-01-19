@@ -12,7 +12,7 @@ export const FooterC = styled.footer`
 
 export const FooterWrapper = styled.div`
   max-width: 1920px;
-  min-height: 200px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
